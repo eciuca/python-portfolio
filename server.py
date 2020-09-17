@@ -1,6 +1,6 @@
 import csv
 
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -33,7 +33,7 @@ def write_to_file(data):
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
-        file = database.write(f'\n{email},{subject},{message}')
+        database.write(f'\n{email},{subject},{message}')
 
 
 def write_to_csv(data):
